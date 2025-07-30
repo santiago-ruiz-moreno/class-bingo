@@ -122,6 +122,7 @@
         <h1 id="title">Wedding Bingo</h1>
         <div class="subtitle" id="subtitle">Find guests who match each description and fill in their names. Have fun mingling!</div>
         <form id="bingo-form">
+              Name: <input type="text" name="name" required><br><br>
             <label for="name" id="label-name">Your Name:</label>
             <input type="text" name="name" id="name" required><br><br>
             <table>
@@ -153,6 +154,43 @@
             <button type="submit" id="submit-btn">Submit</button>
         </form>
     </div>
+
+
+<script>
+document.getElementById("bingo-form").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    blue: form.blue.value,
+    virginia: form.virginia.value,
+    nonspanishenglish: form.nonspanishenglish.value,
+    tattoo: form.tattoo.value,
+    instrument: form.instrument.value,
+    selfie: form.selfie.value,
+    pets: form.pets.value,
+    fussa: form.fussa.value,
+    green: form.green.value,
+    boyaca: form.boyaca.value,
+    motorcycle: form.motorcycle.value,
+    birthmonth: form.birthmonth.value,
+  };
+
+  fetch("https://script.google.com/macros/s/AKfycbyIcoGq4G-mqFuZ08-JtzIXYOXwTHD0A9bwCBD1Hf4/dev", {
+    method: "POST",
+    body: JSON.stringify(data)
+  }).then(res => {
+    if (res.ok) {
+      alert("Thanks for your submission!");
+      form.reset();
+    } else {
+      alert("There was an error submitting the form.");
+    }
+  });
+});
+</script>
+
+
     <script>
         // Translation dictionary
         const translations = {
