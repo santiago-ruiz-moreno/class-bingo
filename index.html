@@ -6,102 +6,117 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            background: linear-gradient(135deg, #fff0f6 0%, #f0f7ff 100%);
+            background: #fffde7;
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
         .container {
-            max-width: 700px;
+            max-width: 750px;
             margin: 40px auto;
             background: #fff;
-            border-radius: 16px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-            padding: 32px 24px;
+            border-radius: 24px;
+            box-shadow: 0 6px 32px rgba(0,0,0,0.10);
+            padding: 36px 28px;
+            border: 3px solid #ffd600;
+            position: relative;
+        }
+        .col-hat {
+            width: 80px;
+            position: absolute;
+            top: -40px;
+            left: 20px;
+            z-index: 2;
         }
         h1 {
             text-align: center;
-            color: #c2185b;
-            font-size: 2.5em;
+            color: #ff5722;
+            font-size: 2.7em;
             margin-bottom: 10px;
             letter-spacing: 2px;
+            font-family: 'Baloo 2', cursive, Arial, sans-serif;
         }
         .subtitle {
             text-align: center;
-            color: #6d4c41;
-            font-size: 1.2em;
+            color: #388e3c;
+            font-size: 1.25em;
             margin-bottom: 30px;
+            font-weight: 500;
         }
         .lang-switch {
             text-align: right;
             margin-bottom: 10px;
         }
         .lang-switch button {
-            background: #f8bbd0;
-            color: #6d4c41;
+            background: #ffd600;
+            color: #333;
             border: none;
-            border-radius: 8px;
-            padding: 6px 16px;
+            border-radius: 12px;
+            padding: 7px 18px;
             font-size: 1em;
             cursor: pointer;
             margin-left: 8px;
+            font-weight: bold;
+            box-shadow: 0 2px 8px rgba(255,214,0,0.08);
         }
         form {
             margin-top: 20px;
         }
         label {
-            font-weight: 500;
-            color: #6d4c41;
+            font-weight: 600;
+            color: #388e3c;
         }
         input[type="text"] {
-            border: 1px solid #e0e0e0;
-            border-radius: 6px;
-            padding: 6px 10px;
+            border: 2px solid #ffe082;
+            border-radius: 8px;
+            padding: 7px 12px;
             width: 95%;
             margin-top: 4px;
             margin-bottom: 10px;
             font-size: 1em;
-            background: #fafafa;
+            background: #fff;
             transition: border-color 0.2s;
         }
         input[type="text"]:focus {
-            border-color: #c2185b;
+            border-color: #ff5722;
             outline: none;
         }
         table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 0 10px;
+            border-spacing: 0 12px;
             margin-bottom: 20px;
         }
         td {
-            padding: 10px 8px;
+            padding: 12px 10px;
             vertical-align: middle;
-            background: #f8bbd0;
-            color: #6d4c41;
-            border-radius: 8px;
+            background: #ffe082;
+            color: #4e342e;
+            border-radius: 12px;
             border: none;
             font-size: 1em;
+            font-weight: 500;
+            box-shadow: 0 2px 8px rgba(255,214,0,0.08);
         }
         td input[type="text"] {
             width: 90%;
             margin: 0;
         }
         button[type="submit"] {
-            background: #c2185b;
+            background: #388e3c;
             color: #fff;
             border: none;
-            border-radius: 8px;
-            padding: 12px 32px;
-            font-size: 1.1em;
+            border-radius: 12px;
+            padding: 14px 36px;
+            font-size: 1.15em;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(194,24,91,0.08);
-            transition: background 0.2s;
+            box-shadow: 0 2px 12px rgba(56,142,60,0.10);
             margin: 0 auto;
             display: block;
+            font-weight: bold;
         }
         button[type="submit"]:hover {
-            background: #ad1457;
+            background: #ff5722;
         }
         @media (max-width: 600px) {
             .container {
@@ -110,11 +125,18 @@
             table, td {
                 font-size: 0.95em;
             }
+            .col-hat {
+                width: 50px;
+                top: -25px;
+            }
         }
     </style>
+    <!-- Google Fonts for Colombian style -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
+        <img src="S-_vueltiao.jpg" class="col-hat" style="top: 10px; left: 20px; width: 120px;">
         <div class="lang-switch">
             <button id="en-btn">English</button>
             <button id="es-btn">Español</button>
@@ -127,10 +149,10 @@
             <table>
                 <tr>
                     <td id="desc-blue">Wearing something blue</td><td><input type="text" name="blue"></td>
-                    <td id="desc-virginia">From out of town</td><td><input type="text" name="virginia"></td>
+                    <td id="desc-virginia">Is from Virginia</td><td><input type="text" name="virginia"></td>
                 </tr>
                 <tr>
-                    <td id="desc-nonspanishenglish">Has traveled abroad</td><td><input type="text" name="nonspanishenglish"></td>
+                    <td id="desc-nonspanishenglish">Is neither Spanish nor English native speaker</td><td><input type="text" name="nonspanishenglish"></td>
                     <td id="desc-tattoo">Has a tattoo</td><td><input type="text" name="tattoo"></td>
                 </tr>
                 <tr>
@@ -153,6 +175,8 @@
             <button type="submit" id="submit-btn">Submit</button>
         </form>
     </div>
+</body>
+</html>
 
 
 <script>
@@ -194,12 +218,12 @@ document.getElementById("bingo-form").addEventListener("submit", function(e) {
         // Translation dictionary
         const translations = {
             en: {
-                title: "Wedding Bingo",
+                title: "Bingo Gringo",
                 subtitle: "Find guests who match each description and fill in their names. Have fun mingling!",
                 labelName: "Your Name:",
                 submit: "Submit",
                 blue: "Wearing something blue",
-                virginia: "From out of town",
+                virginia: "Is from Virginia",
                 nonspanishenglish: "Has traveled abroad",
                 tattoo: "Has a tattoo",
                 instrument: "Plays a musical instrument",
@@ -219,8 +243,8 @@ document.getElementById("bingo-form").addEventListener("submit", function(e) {
                 labelName: "Tu Nombre:",
                 submit: "Enviar",
                 blue: "Viste algo azul",
-                virginia: "Viene de otra ciudad",
-                nonspanishenglish: "Ha viajado al extranjero",
+                virginia: "Viene de Vriginia en Estados Unidos",
+                nonspanishenglish: "Su lengua materna no es español ni inglés",
                 tattoo: "Tiene un tatuaje",
                 instrument: "Toca un instrumento musical",
                 selfie: "Se tomó una selfie contigo",
