@@ -176,7 +176,7 @@ document.getElementById("bingo-form").addEventListener("submit", function(e) {
     birthmonth: form.birthmonth.value,
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbyIcoGq4G-mqFuZ08-JtzIXYOXwTHD0A9bwCBD1Hf4/dev", {
+  fetch("https://script.google.com/macros/s/AKfycbwBqcQ-Z0KZBZgtpNPwfJqVEOiJYTK6dy0WAsyEYEQJoIhK-jqqtPQfjCQ_uGYGMKbf/exec", {
     method: "POST",
     body: JSON.stringify(data)
   }).then(res => {
