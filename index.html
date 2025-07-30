@@ -119,7 +119,7 @@
             <button id="en-btn">English</button>
             <button id="es-btn">Español</button>
         </div>
-        <h1 id="title">Wedding Bingo</h1>
+        <h1 id="title">Bingo Gringo</h1>
         <div class="subtitle" id="subtitle">Find guests who match each description and fill in their names. Have fun mingling!</div>
         <form id="bingo-form">
             <label for="name" id="label-name">Your Name:</label>
@@ -237,6 +237,34 @@ document.getElementById("bingo-form").addEventListener("submit", function(e) {
 
         let currentLang = "en";
 
-        function setLanguage(lang) {
-            currentLang = lang;
-            const t = translations[lang];
+    function setLanguage(lang) {
+        currentLang = lang;
+        const t = translations[lang];
+        document.getElementById("title").textContent = t.title;
+        document.getElementById("subtitle").textContent = t.subtitle;
+        document.getElementById("label-name").textContent = t.labelName;
+        document.getElementById("submit-btn").textContent = t.submit;
+        document.getElementById("desc-blue").textContent = t.blue;
+        document.getElementById("desc-virginia").textContent = t.virginia;
+        document.getElementById("desc-nonspanishenglish").textContent = t.nonspanishenglish;
+        document.getElementById("desc-tattoo").textContent = t.tattoo;
+        document.getElementById("desc-instrument").textContent = t.instrument;
+        document.getElementById("desc-selfie").textContent = t.selfie;
+        document.getElementById("desc-pets").textContent = t.pets;
+        document.getElementById("desc-fussa").textContent = t.fussa;
+        document.getElementById("desc-green").textContent = t.green;
+        document.getElementById("desc-boyaca").textContent = t.boyaca;
+        document.getElementById("desc-motorcycle").textContent = t.motorcycle;
+        document.getElementById("desc-birthmonth").textContent = t.birthmonth;
+    }
+
+    document.getElementById("en-btn").addEventListener("click", function() {
+        setLanguage("en");
+    });
+    document.getElementById("es-btn").addEventListener("click", function() {
+        setLanguage("es");
+    });
+
+    // Optionally set initial language
+    setLanguage(currentLang);
+</script>
